@@ -1,5 +1,5 @@
-## Kodlama.io
+# Kodlama.io
 
-# Rent A Car Demo
+## Rent A Car Demo
 
 Yazılım Geliştirici Yetiştirme Kampı (C#) Yan Proje Geliştirme
