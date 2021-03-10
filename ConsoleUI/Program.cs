@@ -14,7 +14,32 @@ namespace ConsoleUI
             //BrandCrudTest();
             //ColorCrudTest();
             //CarManagerTest();            
-            CarDetails();
+            //CarDetails();
+            RentalAdd();
+            //UserAdd();
+            //CustomerAdd();
+        }
+
+        private static void CustomerAdd()
+        {
+            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+            var result = customerManager.Add(new Customer {CustomerId = 2,UserId = 2,CompanyName = "Turkcell"});
+            Console.WriteLine(result.Message);
+        }
+
+        private static void UserAdd()
+        {
+            UserManager userManager = new UserManager(new EfUserDal());
+            var result = userManager.Add(new User
+                {UserId = 2, FirstName = "Yusuf", LastName = "Kaymaz", Email = "abc@gmail.com", Password = "abc123"});
+            Console.WriteLine(result.Message);
+        }
+
+        private static void RentalAdd()
+        {
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
+            var result = rentalManager.Add(new Rental{RentalId = 2,CarId = 2,CustomerId = 2,RentDate = DateTime.Now});
+            Console.WriteLine(result.Message);
         }
 
         //private static void ColorCrudTest()
@@ -63,7 +88,7 @@ namespace ConsoleUI
         //    {
         //        Console.WriteLine("BrandId: {0} -- BrandName: {1} ", brand.BrandId, brand.BrandName);
         //    }
-            
+
         //    Console.WriteLine("------After Deleted-----");
         //    brandManager.Delete(new Brand {BrandId=10 });
         //    foreach (var brand in result.Data)
